@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Casa da Construção</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="logo-area">
+    <div class="logo">
+  <img src="Construd4.jpeg" alt="Constru'D Logo">
+</div>
+    <div>
+      <h2>Loja Constru<span>'D</span></h2>
+      <p>Materiais de Qualidade</p>
+    </div>
+  </div>
+
+  <nav>
+    <a href="#inicio">Início</a>
+    <a href="#produtos">Produtos</a>
+    <a href="#sobre">Sobre</a>
+    <a href="#contato">Contato</a>
+  </nav>
+</header>
+
+<section id="inicio" class="hero">
+  <div class="hero-content">
+    <h1>Tudo para sua Obra</h1>
+    <p>Materiais de construção de qualidade com os melhores preços da região</p>
+
+    <div class="hero-buttons">
+      <button onclick="scrollToSection('produtos')" class="btn-orange">Ver Produtos</button>
+      <button onclick="scrollToSection('contato')" class="btn-white">Entre em Contato</button>
+    </div>
+  </div>
+</section>
+
+<section id="produtos" class="section gray">
+  <h2>Nossos Produtos</h2>
+  <p class="subtitle">Categorias completas para todas as etapas da sua obra</p>
+
+  <div class="product-grid">
+    <div class="product-card" onclick="abrirCategoria('cimento')"><span>🏗️</span><h3>Cimento e Argamassa</h3><p>Cimentos, argamassas e reboco</p></div>
+     <div class="product-card" onclick="abrirCategoria('ferramentas')"><span>🔨</span><h3>Ferramentas</h3><p>Martelos, furadeiras, serras e mais</p></div>
+      <div class="product-card" onclick="abrirCategoria('tintas')"><span>🎨</span><h3>Tintas e Vernizes</h3><p>Tintas, pincéis e rolos</p></div>
+    <div class="product-card" onclick="abrirCategoria('hidraulica')"><span>🚰</span><h3>Hidráulica</h3><p>Tubos, conexões e registros</p></div>
+    <div class="product-card" onclick="abrirCategoria('eletrica')"><span>💡</span><h3>Elétrica</h3><p>Fios, disjuntores e tomadas</p></div>
+    <div class="product-card" onclick="abrirCategoria('madeiras')"><span>🪵</span><h3>Madeiras</h3><p>Tábuas, vigas e compensados</p></div>
+    <div class="product-card" onclick="abrirCategoria('pisos')"><span>⬜</span><h3>Pisos e Revestimentos</h3><p>Cerâmicas, porcelanatos e pedras</p></div>
+    <div class="product-card" onclick="abrirCategoria('ferragens')"><span>🔩</span><h3>Ferragens</h3><p>Parafusos, pregos e dobradiças</p></div>
+  </div>
+
+
+</section>
+
+<section id="paginaCategoria" class="pagina-categoria">
+  <button class="btn-voltar" onclick="voltarCategorias()">← Voltar</button>
+
+  <h2 id="tituloPaginaCategoria">Categoria</h2>
+
+  <div id="produtosPagina" class="produtos-pagina"></div>
+</section>
+
+<section id="sobre" class="section about">
+  <div class="about-text">
+    <h2>Sobre Nós</h2>
+    <p>Há mais de 15 anos no mercado, a Casa da Construção é referência em materiais de construção na região. Nossa missão é oferecer produtos de qualidade com preços justos e atendimento personalizado.</p>
+    <p>Trabalhamos com as melhores marcas do mercado e temos uma equipe especializada pronta para ajudar você a escolher os materiais ideais para sua obra.</p>
+
+    <div class="stats">
+      <div><strong>15+</strong><span>Anos no mercado</span></div>
+      <div><strong>5000+</strong><span>Clientes satisfeitos</span></div>
+      <div><strong>100%</strong><span>Compromisso</span></div>
+    </div>
+  </div>
+
+  <div class="hours">
+    <h3>Horário de Funcionamento</h3>
+    <p><span>Segunda a Sexta:</span> <b>7:00 - 18:00</b></p>
+    <p><span>Sábado:</span> <b>7:00 - 13:00</b></p>
+    <p><span>Domingo:</span> <b>Fechado</b></p>
+  </div>
+</section>
+
+<section id="contato" class="section gray contact">
+  <h2>Entre em Contato</h2>
+  <p class="subtitle">Estamos prontos para atender você</p>
+
+  <div class="chat-alert">💬 Clique no botão de chat laranja no canto da tela para falar conosco!</div>
+
+  <div class="contact-grid">
+    <div class="contact-card"><div>📞</div><h3>Telefone</h3><p>(11) 3456-7890<br>(11) 98765-4321</p></div>
+    <div class="contact-card"><div>📍</div><h3>Endereço</h3><p>Rua das Obras, 123<br>Centro - São Paulo, SP</p></div>
+    <div class="contact-card">
+  <div>🤖</div>
+
+  <h3>Atendimento Inteligente</h3>
+
+  <p>
+    Tire dúvidas, consulte produtos e
+    receba atendimento rápido pelo
+    assistente virtual.
+  </p>
+
+  <button class="btn-chat-card"
+    onclick="abrirChatbot()">
+    Abrir Chat
+  </button>
+</div>
+</section>
+
+<button id="abrirChat" class="chat-balao" onclick="abrirChatbot()">
+  <img src="./Construd4.jpeg" alt="Chat">
+</button>
+
+<div id="overlayChat" class="overlay-chat">
+  <div id="chat">
+
+    <div id="header">
+      <img src="Construd4.jpeg" class="icon">
+      Loja Constru'D
+      <button id="fecharChat" class="fechar-chat" onclick="fecharChatbot()">×</button>
+    </div>
+
+    <div id="messages"></div>
+
+    <div id="inputArea">
+      <input id="input" placeholder="Para começar, digite: oi">
+      <button onclick="enviar()">Enviar</button>
+    </div>
+
+  </div>
+</div>
+
+<script src="script.js"></script>
+
+
+</body>
+</html>
